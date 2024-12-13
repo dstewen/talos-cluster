@@ -1,0 +1,3 @@
+---
+providerRegex: ^(ms3)$
+bypassDnsResolution: true

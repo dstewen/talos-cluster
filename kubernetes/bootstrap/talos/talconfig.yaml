@@ -27,7 +27,7 @@ nodes:
     ipAddress: "192.168.10.53"
     installDiskSelector:
       serial: "22061X806789"
-    talosImageURL: factory.talos.dev/installer/88f03a4097d9facb29e452bc98dbe49b5ae122067cf291faf1d4bd7b9598e542
+    talosImageURL: factory.talos.dev/installer/743d942690991fb5b20d07e54b6d33c60b19d7918e14d61173d79e718ebc0b47
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -41,33 +41,13 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.10.254"
-      # Intel VPRO
-      - deviceSelector:
-          hardwareAddr: "58:47:ca:78:f8:4d"
-        ignore: true
-      - interface: bond0
-        bond:
-          mode: 802.3ad
-          xmitHashPolicy: layer3+4
-          lacpRate: fast
-          miimon: 100
-          deviceSelectors:
-            - hardwareAddr: "58:47:ca:78:f8:*"
-              driver: i40e
-        dhcp: false
-        mtu: 1500
-        vlans:
-          - vlanId: 10
-            dhcp: false
-            addresses:
-              - "192.168.10.27/24"
-            mtu: 1500
-          - vlanId: 20
-            dhcp: false
-            mtu: 1500
-          - vlanId: 30
-            dhcp: false
-            mtu: 1500
+    extensionServices:
+      - name: nut-client
+        configFiles:
+          - content: |-
+              MONITOR ups@192.168.10.23 1 upsmon_local mypassword secondary
+              SHUTDOWNCMD "/sbin/poweroff"
+            mountPath: 
 
 # Global patches
 patches:

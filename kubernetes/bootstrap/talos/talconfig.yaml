@@ -27,7 +27,7 @@ nodes:
     ipAddress: "192.168.10.53"
     installDiskSelector:
       serial: "22061X806789"
-    talosImageURL: factory.talos.dev/installer/d4fe875c33ae7eb98c194246d3a61fc99f3974945aee442f252ebf3b0bcacf31
+    talosImageURL: factory.talos.dev/installer/88f03a4097d9facb29e452bc98dbe49b5ae122067cf291faf1d4bd7b9598e542
     controlPlane: true
     networkInterfaces:
       - deviceSelector:

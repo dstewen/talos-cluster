@@ -74,7 +74,7 @@ nodes:
           - content: |-
               MONITOR ups@192.168.10.23 1 upsmon_local mypassword secondary
               SHUTDOWNCMD "/sbin/poweroff"
-            mountPath:
+            mountPath: /usr/local/etc/nut/upsmon.conf
 
 # Global patches
 patches:

@@ -27,7 +27,7 @@ spec:
     keepHistory: false
   values:
     runnerScaleSetName: arc-runner-set-home-ops-amd64-runner
-    githubConfigUrl: https://github.com/dstewen/cm4-cluster
+    githubConfigUrl: https://github.com/dstewen/talos-cluster
     githubConfigSecret: pre-defined-secret
     minRunners: 1
     maxRunners: 2

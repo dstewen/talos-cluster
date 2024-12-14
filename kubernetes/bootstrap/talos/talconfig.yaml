@@ -41,6 +41,10 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.10.254"
+      # Intel VPRO
+      - deviceSelector:
+          hardwareAddr: "58:47:ca:78:f8:4d"
+        ignore: true
       - interface: bond0
         bond:
           mode: 802.3ad
@@ -48,7 +52,7 @@ nodes:
           lacpRate: fast
           miimon: 100
           deviceSelectors:
-            - hardwareAddr: 58:47:ca:78:f8:*
+            - hardwareAddr: "58:47:ca:78:f8:*"
               driver: i40e
         dhcp: false
         mtu: 1500
@@ -56,13 +60,8 @@ nodes:
           - vlanId: 10
             dhcp: false
             addresses:
-              - 192.168.10.27/24
+              - "192.168.10.27/24"
             mtu: 1500
-            routes:
-              - network: 0.0.0.0/0
-                gateway: 192.168.10.1
-            vip:
-              ip: 192.168.10.200
           - vlanId: 20
             dhcp: false
             mtu: 1500

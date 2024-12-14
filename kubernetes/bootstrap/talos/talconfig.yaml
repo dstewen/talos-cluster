@@ -41,6 +41,34 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.10.254"
+      - interface: bond0
+        bond:
+          mode: 802.3ad
+          xmitHashPolicy: layer3+4
+          lacpRate: fast
+          miimon: 100
+          deviceSelectors:
+            - hardwareAddr: 58:47:ca:78:f8:*
+              driver: i40e
+        dhcp: false
+        mtu: 1500
+        vlans:
+          - vlanId: 10
+            dhcp: false
+            addresses:
+              - 192.168.10.27/24
+            mtu: 1500
+            routes:
+              - network: 0.0.0.0/0
+                gateway: 192.168.10.1
+            vip:
+              ip: 192.168.10.200
+          - vlanId: 20
+            dhcp: false
+            mtu: 1500
+          - vlanId: 30
+            dhcp: false
+            mtu: 1500
 
 # Global patches
 patches:

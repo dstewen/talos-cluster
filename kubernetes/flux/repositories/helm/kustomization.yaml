@@ -10,8 +10,11 @@ resources:
   - ./external-dns.yaml
   - ./external-secrets.yaml
   - ./ingress-nginx.yaml
+  - ./intel.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
+  - ./kubernetes-sigs-descheduler-charts.yaml
+  - ./kubernetes-sigs-nfd.yaml
   - ./metrics-server.yaml
   - ./openebs.yaml
   - ./postfinance.yaml

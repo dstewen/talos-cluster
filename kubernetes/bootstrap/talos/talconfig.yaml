@@ -42,7 +42,7 @@ nodes:
           ip: "192.168.10.254"
         # Intel VPRO
       - deviceSelector:
-          hardwareAddr: "58:47:ca:78:f8:4d"
+          hardwareAddr: "58:47:ca:77:cf:39"
         ignore: true
       - interface: bond0
         bond:
@@ -93,7 +93,7 @@ nodes:
           ip: "192.168.10.254"
         # Intel VPRO
       - deviceSelector:
-          hardwareAddr: "58:47:ca:78:f8:4d"
+          hardwareAddr: "58:47:ca:78:f1:35"
         ignore: true
       - interface: bond0
         bond:

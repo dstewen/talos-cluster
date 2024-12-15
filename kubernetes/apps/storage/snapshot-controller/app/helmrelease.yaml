@@ -35,23 +35,25 @@ spec:
 #        deletionPolicy: Delete
     controller:
       revisionHistoryLimit: 3
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/arch
-                operator: In
-                values:
-                - arm64
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 50
-            preference:
-              matchExpressions:
-              - key: node-role.kubernetes.io/worker
-                operator: In
-                values:
-                - worker
+# Disable as no workers
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#            - matchExpressions:
+#              - key: kubernetes.io/arch
+#                operator: In
+#                values:
+#                - arm64
+#          preferredDuringSchedulingIgnoredDuringExecution:
+#          - weight: 50
+#            preference:
+#              matchExpressions:
+#              - key: node-role.kubernetes.io/worker
+#                operator: In
+#                values:
+#                - worker
+
 #      args:
 #        enableDistributedSnapshotting: true
 #      serviceMonitor:

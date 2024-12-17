@@ -37,6 +37,7 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.10.1"
+            metric: 2048
         mtu: 1500
         vip:
           ip: "192.168.10.254"
@@ -61,6 +62,10 @@ nodes:
             addresses:
               - "192.168.10.81/24"
             mtu: 1500
+            routes:
+              - network: 0.0.0.0/0
+                gateway: 192.168.10.1
+                metric: 1024
           - vlanId: 20
             dhcp: false
             mtu: 1500
@@ -88,6 +93,7 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.10.1"
+            metric: 2048
         mtu: 1500
         vip:
           ip: "192.168.10.254"
@@ -112,6 +118,10 @@ nodes:
             addresses:
               - "192.168.10.82/24"
             mtu: 1500
+            routes:
+              - network: 0.0.0.0/0
+                gateway: 192.168.10.1
+                metric: 1024
           - vlanId: 20
             dhcp: false
             mtu: 1500
@@ -140,6 +150,7 @@ nodes:
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.10.1"
+            metric: 2048
         mtu: 1500
         vip:
           ip: "192.168.10.254"
@@ -164,6 +175,10 @@ nodes:
             addresses:
               - "192.168.10.83/24"
             mtu: 1500
+            routes:
+              - network: 0.0.0.0/0
+                gateway: 192.168.10.1
+                metric: 1024
           - vlanId: 20
             dhcp: false
             mtu: 1500
